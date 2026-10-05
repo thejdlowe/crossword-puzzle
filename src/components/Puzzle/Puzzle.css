@@ -1,0 +1,26 @@
+.puzzle {
+	width: calc(50px * 20);
+	display: flex;
+	background-color: white;
+	color: black;
+}
+.puzzle-column {
+	width: 50px;
+}
+
+.puzzle-cell-empty,
+.puzzle-cell {
+	border: 1px solid black;
+}
+
+.puzzle-cell-empty {
+	background-color: black;
+}
+
+.puzzle-cell-solved {
+	background-color: lightgreen;
+}
+
+.puzzle-questions {
+	display: flex;
+}
