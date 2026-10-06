@@ -3,6 +3,8 @@ type PuzzleColumn = {
 	question?: string;
 	solved?: boolean;
 };
+export const cryptexAnswer = "USETHISGRIDASCRYPTEX";
+export const finalAnswer = "ESPIONAGE";
 export const puzzleColumns: PuzzleColumn[][] = [
 	[
 		{ answer: "FUTURE", question: "Back to the ____", solved: false },

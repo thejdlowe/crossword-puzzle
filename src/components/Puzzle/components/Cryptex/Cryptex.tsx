@@ -25,11 +25,10 @@ export const Cryptex = ({ columns }) => {
 			return newColumns;
 		});
 	};
-    const shiftDown = (index) => {
-		
+	const shiftDown = (index) => {
 		setCryptexColumns((prevColumns) => {
 			const newColumns = [...prevColumns];
-			const columnToShift = [...newColumns[index]]
+			const columnToShift = [...newColumns[index]];
 			const lastCell = columnToShift.pop();
 			columnToShift.unshift(lastCell);
 			newColumns[index] = columnToShift;
@@ -37,12 +36,16 @@ export const Cryptex = ({ columns }) => {
 		});
 	};
 
-    const resetColumns = () => {
-        setCryptexColumns(defaultColumns);
-    }
+	const resetColumns = () => {
+		setCryptexColumns(defaultColumns);
+	};
 
-    return (
+	return (
 		<>
+			<div>
+				There is a final nine letter word to find. You will know it when you see
+				it.
+			</div>
 			<div className="puzzle">
 				{cryptexColumns.map((column, columnIndex) => (
 					<div key={columnIndex} className="puzzle-column">
@@ -74,9 +77,9 @@ export const Cryptex = ({ columns }) => {
 					</div>
 				))}
 			</div>
-            <div>
-                <button onClick={resetColumns}>Reset</button>
-            </div>
-        </>
-    );
-}
+			<div>
+				<button onClick={resetColumns}>Reset</button>
+			</div>
+		</>
+	);
+};

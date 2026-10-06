@@ -2,6 +2,10 @@ import React, { useRef } from "react";
 export const Crossword = ({ columns, handleSubmit, inputRef }) => {
 	return (
 		<>
+			<div>
+				Enter the answers into the text box below. When you find the next step,
+				enter it into the text box.
+			</div>
 			<div className="puzzle">
 				{columns.map((column, columnIndex) => (
 					<div key={columnIndex} className="puzzle-column">

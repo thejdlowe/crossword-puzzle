@@ -1,4 +1,4 @@
-import { puzzleColumns } from "../../data/columns";
+import { puzzleColumns, cryptexAnswer } from "../../data/answers";
 import "./Puzzle.css";
 import { useRef, useState } from "react";
 import { Crossword } from "./components/Crossword";
@@ -13,7 +13,7 @@ export const Puzzle = () => {
 		if (!inputValue) {
 			return;
 		}
-		if (inputValue.split(" ").join() === "USETHISGRIDASCRYPTEX") {
+		if (inputValue.split(" ").join() === cryptexAnswer) {
 			setColumns((prevColumns) =>
 				prevColumns.map((column) =>
 					column.map((cell) => {
@@ -38,10 +38,14 @@ export const Puzzle = () => {
 	};
 	return (
 		<section>
-			<div>Puzzle</div>
+			<div>Best solved on a desktop computer</div>
 			<div>
-				An orange male ghost, Lord he who shall not be named, and Gotham's clown
-				prince team up against Hyrule's greatest warrior.
+				<b>
+					<i>
+						An orange male ghost, Lord he who shall not be named, and Gotham's
+						clown prince team up against Hyrule's greatest warrior.
+					</i>
+				</b>
 			</div>
 			{cryptexMode ? (
 				<Cryptex columns={columns} />
