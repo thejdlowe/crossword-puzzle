@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "http://thejdlowe.github.io/puzzle",
+	"homepage": "https://thejdlowe.github.io/crossword-puzzle",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
