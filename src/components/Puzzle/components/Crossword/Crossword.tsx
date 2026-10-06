@@ -52,8 +52,12 @@ export const Crossword = ({
 			</div>
 			<div className="puzzle-questions">
 				<div>
+					<span><b>Column</b></span>
 					{columns.map((column, columnIndex) => (
-						<div key={columnIndex} style={{ display: "flex", width: "300px" }}>
+						<div
+							key={columnIndex}
+							style={{ display: "flex", width: "300px", paddingBottom: "10px" }}
+						>
 							<span>{columnIndex + 1}</span>
 							<span>
 								{column.map(
@@ -64,9 +68,9 @@ export const Crossword = ({
 										if (!cell.question) {
 											return null;
 										}
-										let style = {};
+										let style = { paddingBottom: "10px" };
 										if (cell.solved) {
-											style = { backgroundColor: "lightgreen" };
+											style = { ...style, backgroundColor: "lightgreen" };
 										}
 										return (
 											<div key={rowIndex} style={style}>
