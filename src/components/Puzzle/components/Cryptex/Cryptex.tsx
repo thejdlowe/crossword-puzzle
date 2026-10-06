@@ -1,9 +1,9 @@
 import { useState } from "react";
-export const Cryptex = ({ columns }) => {
-	const col = [];
-	columns.forEach((column) => {
-		const newColumn = [];
-		column.forEach((cell) => {
+export const Cryptex = ({ columns }: { columns: any[] }) => {
+	const col: string[][] = [];
+	columns.forEach((column: any[]) => {
+		const newColumn: string[] = [];
+		column.forEach((cell: { answer?: string }) => {
 			if (!cell.answer) {
 				newColumn.push("");
 			} else {
@@ -14,22 +14,21 @@ export const Cryptex = ({ columns }) => {
 	});
 	const defaultColumns = col;
 	const [cryptexColumns, setCryptexColumns] = useState(defaultColumns);
-	const shiftUp = (index) => {
-		console.log(index);
+	const shiftUp = (index: number) => {
 		setCryptexColumns((prevColumns) => {
 			const newColumns = [...prevColumns];
 			const columnToShift = [...newColumns[index]];
-			const firstCell = columnToShift.shift();
+			const firstCell = columnToShift.shift() ?? "";
 			columnToShift.push(firstCell);
 			newColumns[index] = columnToShift;
 			return newColumns;
 		});
 	};
-	const shiftDown = (index) => {
+	const shiftDown = (index: number) => {
 		setCryptexColumns((prevColumns) => {
 			const newColumns = [...prevColumns];
 			const columnToShift = [...newColumns[index]];
-			const lastCell = columnToShift.pop();
+			const lastCell = columnToShift.pop() ?? "";
 			columnToShift.unshift(lastCell);
 			newColumns[index] = columnToShift;
 			return newColumns;

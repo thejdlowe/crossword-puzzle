@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { Puzzle } from "./components/Puzzle";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 
 function App() {
-	const [count, setCount] = useState(0);
-
+	useEffect(() => {
+		document.title = `J.D. Lowe's Puzzle`;
+	}, []);
 	return <Puzzle />;
 }
 
