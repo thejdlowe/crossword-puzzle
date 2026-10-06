@@ -60,11 +60,15 @@ export const Crossword = ({
 							key={columnIndex}
 							style={{ display: "flex", width: "350px", paddingBottom: "10px" }}
 						>
-							<span style={{width: "50px"}}>{columnIndex + 1}</span>
+							<span style={{ width: "50px" }}>{columnIndex + 1}</span>
 							<span>
 								{column.map(
 									(
-										cell: { question?: string; solved: boolean, answer?: string },
+										cell: {
+											question?: string;
+											solved: boolean;
+											answer?: string;
+										},
 										rowIndex: number,
 									) => {
 										if (!cell.question) {
@@ -76,7 +80,7 @@ export const Crossword = ({
 										}
 										return (
 											<div key={rowIndex} style={style}>
-												{cell.question} ({cell.answer.length})
+												{cell.question} ({cell.answer?.length})
 											</div>
 										);
 									},
